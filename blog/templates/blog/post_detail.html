@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div>
+        {% if post.published_date %}
+            {{ post.published_date }}
+        {% endif %}
+    </div>
+    <a href="{% url 'post_edit' pk=post.pk %}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
+    <h1>{{ post.title}}</h1>
+    <p>{{ post.text|linebreaks }}</p>
+{% endblock content %}
+

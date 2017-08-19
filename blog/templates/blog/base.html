@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+         <link rel="stylesheet" href="{% static 'blog/css/materialize.min.css' %}">
+
+
+    </head>
+    <body>
+        <div class="card-panel indigo darken-2">
+            <a href="{% url 'blog.views.post_new' %}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <h1><a href="" class="green-text">Django Girls blog</a></h1>
+        </div >
+        <div class="row">
+            <div class="col s12">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="{% static 'blog/js/jquery-3.2.1.js' %}"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="{% static 'blog/js/materialize.min.js' %}"></script>
+          
+</html>
